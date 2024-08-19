@@ -4,6 +4,7 @@ import { lazy, Suspense } from 'react';
 import Loading from './component/Loading';
 let Register = lazy(() => import('./pages/Register'));
 let VerifyEmail = lazy(() => import('./pages/VerifyEnail'));
+let Login = lazy(() => import('./pages/Login'));
 function App() {
   return (
     <div>
@@ -12,6 +13,7 @@ function App() {
           <Routes>
             <Route path="/register" element={<Register />} />
             <Route path="/verify-email" element={<VerifyEmail />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </BrowserRouter>
         <Toaster />
