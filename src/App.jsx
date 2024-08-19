@@ -5,6 +5,7 @@ import Loading from './component/Loading';
 let Register = lazy(() => import('./pages/Register'));
 let VerifyEmail = lazy(() => import('./pages/VerifyEnail'));
 let Login = lazy(() => import('./pages/Login'));
+let ForgetPassword= lazy(() => import('./pages/ForgetPassword'));
 function App() {
   return (
     <div>
@@ -14,6 +15,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/verify-email" element={<VerifyEmail />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/forget-password" element={<ForgetPassword />} />
           </Routes>
         </BrowserRouter>
         <Toaster />
