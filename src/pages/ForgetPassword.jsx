@@ -1,10 +1,10 @@
-
 import { AiOutlineMail } from 'react-icons/ai';
 import { useState } from 'react';
 import Axios from '../axios/Axios';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
-import { TiTick } from "react-icons/ti";
+import { TiTick } from 'react-icons/ti';
+
 function ForgetPassword() {
   let [email, setEmail] = useState('');
   let [info, setInfo] = useState({});
@@ -25,11 +25,11 @@ function ForgetPassword() {
     if (Object.keys(errors).length === 0) {
       try {
         setLoading(true);
-        let { data } = await Axios.post('auth/forget-password/', {
+        let { data } = await Axios.post('auth/forget-password', {
           email,
         });
         if (data.success) {
-					setInfo(data)
+          setInfo(data);
           toast.success(data.message);
         } else {
           toast.error(data.message);
@@ -37,6 +37,7 @@ function ForgetPassword() {
         setLoading(false);
       } catch (error) {
         setLoading(false);
+
         console.log(error);
       }
     }
@@ -74,12 +75,20 @@ function ForgetPassword() {
         className="w-[80%] disabled:cursor-not-allowed sm:w-[400px] py-1 bg-cyan-500 hover:bg-cyan-700 rounded-lg font-medium text-lg ">
         Login
       </button>
-			{info.success ? ( <div className='w-[80%] font-medium text-green-500 sm:w-[400px] backdrop-blur-sm bg-opacity-10  bg-green-400 rounded-md  duration-300 transition-all'>
-				<p className=' p-5 flex break-all'>
-				An email has been sent to your account <span className='text-2xl
-				'><TiTick/></span>
-			</p>
-			</div> ) : <></>}
+      {info.success ? (
+        <div className="w-[80%] font-medium text-green-500 sm:w-[400px] backdrop-blur-sm bg-opacity-10  bg-green-400 rounded-md  duration-300 transition-all">
+          <p className=" p-5 flex break-all">
+            An email has been sent to your account{' '}
+            <span
+              className="text-2xl
+				">
+              <TiTick />
+            </span>
+          </p>
+        </div>
+      ) : (
+        <></>
+      )}
     </form>
   );
 }

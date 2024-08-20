@@ -20,3 +20,10 @@
       rgb(148, 39, 183) 100%
     );
 }
+
+.home {
+  background-image: url('https://www.cpomagazine.com/wp-content/uploads/2023/02/transparent-password-strength-helps-end-users-improve-cybersecurity_1500.jpg');
+  background-repeat: no-repeat;
+
+  background-size: cover;
+}
