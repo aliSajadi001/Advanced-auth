@@ -6,6 +6,7 @@ let Register = lazy(() => import('./pages/Register'));
 let VerifyEmail = lazy(() => import('./pages/VerifyEnail'));
 let Login = lazy(() => import('./pages/Login'));
 let ForgetPassword= lazy(() => import('./pages/ForgetPassword'));
+let ResetPassword= lazy(() => import('./pages/ResetPassword'));
 function App() {
   return (
     <div>
@@ -16,6 +17,7 @@ function App() {
             <Route path="/verify-email" element={<VerifyEmail />} />
             <Route path="/login" element={<Login />} />
             <Route path="/forget-password" element={<ForgetPassword />} />
+            <Route path="/reset-password/:token" element={<ResetPassword />} />
           </Routes>
         </BrowserRouter>
         <Toaster />
